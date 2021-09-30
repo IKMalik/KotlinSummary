@@ -31,3 +31,43 @@ fun helloWorld (){
 fun main(){
     helloWorld()
 }
+
+
+/**
+ * You can edit, run, and share this code. 
+ * play.kotlinlang.org 
+ */
+import java.util.*
+
+fun randomFish(){
+    val type = fishTypes()
+    val age = ageOfFish(type)
+    println("Fish type is $type and it is $age old")
+}
+
+fun fishTypes(): String{
+    val types = listOf("Shark", "Nemo", "Whale", "Uerry", "UnknownEntity")
+    println(types.filter{it[0] == 'U'})
+    return types[Random().nextInt(types.size)]
+}
+
+fun ageOfFish(type: String = "defaultFish"): Int{
+    
+    return when (type){
+        "Shark" -> 1000
+        "Nemo" -> 100
+        "Whale" -> 310
+        "Jerry" -> 99
+        else -> -999
+    }
+}
+
+fun main(){
+    randomFish()
+    test(132,23)
+}
+
+fun test(a: Int, b:Int=3){
+    println(a>b)
+
+}
